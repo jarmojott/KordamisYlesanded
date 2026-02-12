@@ -53,7 +53,7 @@ internal class Program
         // programm kontrollib tsükliga kas järjendis on snäkk olemas
         // kui tsüklis leitakse snäkk, kuva tekst koos kasutajasisendiga, "jaa :D tean seda, {snäkk} on hea"
         // kui tsükkel lõppeb ilma snäkki leidmata, kuva tekst "ei tunne kahjuks {snäkk}i :C"
-
+        /*
         string[] snäkid = { "Lays", "Estrella", "Piraat", "Vahvel", "Kõrsik" };
 
         Console.Write("Palun sisesta oma lemmiksnäkk: ");
@@ -73,7 +73,7 @@ internal class Program
             Console.WriteLine($"jaa :D tean seda, {lemmikSnäkk} on hea");
         else
             Console.WriteLine($"ei tunne kahjuks {lemmikSnäkk}-i :C");
-
+         */
         // #n3. "Metsataimede välimääraja"
         // kirjuta programm mis
         // küsib kasutajalt kas ta otsib mingit seent või marja (tsüklis)
@@ -85,6 +85,91 @@ internal class Program
         // tsükkel siis käib ja otsib teisest järjendis marja infot ja kuvab selle
         // siis küsitakse kas kasutaja tahab mõne marja kohta veel infot, ning tsükkel jätkub
         // ⭐iseseisvalt lisa juurde puude tuvastamine ⭐
+
+
+
+        List<string> valikud = new List<string>() { "seent", "marja", "puud" };
+
+        string otsing = String.Empty;
+        do
+        {
+            Console.Write("Tee oma valik (" + string.Join(", ", valikud) + "): ");
+            otsing = Console.ReadLine();
+        }
+        //while (otsing != "seent" || otsing != "marja");
+        while (!valikud.Contains(otsing.ToLower()));
+
+        if (otsing.ToLower() == valikud.ElementAt(0))
+        {
+            List<string> seeneNimi = new List<string>() { "Kukeseen", "Puravik", "Kärbseseen" };
+            List<string> seeneKirjeldus = new List<string>() { "Kukeseen on kollane.", "Puravik on pruunikas.", "Kärbseseen on pealt täpiline." };
+
+            int valik = 0;
+            do
+            {
+                Console.WriteLine("Palun vali numbriga seen, mille kohta soovid infot. Valikus on " + seeneNimi.Count + " seent:");
+                for (int i = 1; i < seeneNimi.Count + 1; i++)
+                {
+                    Console.WriteLine(i + ". " + seeneNimi.ElementAt(i - 1));
+                }
+                valik = int.Parse(Console.ReadLine());
+            }
+            while (!(valik > 0 && valik <= seeneNimi.Count));
+            Console.WriteLine(seeneKirjeldus.ElementAt(valik - 1));
+
+        }
+        else if (otsing.ToLower() == valikud.ElementAt(1))
+        {
+            string vastus = "jah";
+            while (vastus == "jah")
+            {
+                List<string> marjaNimi = new List<string>() { "Maasikas", "Kirss", "Tikker" };
+                List<string> marjaKirjeldus = new List<string>() { "Maasikas on punane.", "Kirss kasvab puu otsas.", "Tikker kasvab pöösas." };
+
+                int valik = 0;
+                do
+                {
+                    Console.WriteLine("Palun vali numbriga mari, mille kohta soovid infot. Valikus on " + marjaNimi.Count + " seent:");
+                    for (int i = 1; i < marjaNimi.Count + 1; i++)
+                    {
+                        Console.WriteLine(i + ". " + marjaNimi.ElementAt(i - 1));
+                    }
+                    valik = int.Parse(Console.ReadLine());
+                }
+                while (!(valik > 0 && valik <= marjaNimi.Count));
+                Console.WriteLine(marjaKirjeldus.ElementAt(valik - 1));
+
+                Console.WriteLine("Kas tahad veel infot: jah/ei");
+                vastus = Console.ReadLine().ToLower();
+            }
+        }
+        else
+        {
+            //List<string> puuNimi = new List<string>() { "Kask", "Kuusk", "Vaher" };
+            //List<string> puuKirjeldus = new List<string>() { "Kask on valge tüvega.", "Kuusel on okkad.", "Vaheri leht on Kanada riigilipul." };
+            string[,] puud = new string[,]
+        {
+            { "Kask", "Kask on valget värvi tüvega."},
+            { "Kuusk", "Kuusel on okkad."},
+            { "Vaher", "Vaheri leht on Kanada riigilipul."}
+        };
+
+            int valik = 0;
+            do
+            {
+                Console.WriteLine("Palun vali numbriga puu, mille kohta soovid infot. Valikus on " + puud.GetLength(0) + " seent:");
+                for (int i = 1; i < puud.GetLength(0) + 1; i++)
+                {
+                    Console.WriteLine(i + ". " + puud[i-1, 0]);
+                }
+                valik = int.Parse(Console.ReadLine());
+            }
+            while (!(valik > 0 && valik <= puud.GetLength(0)));
+            Console.WriteLine(puud[valik-1, 1]);
+
+        }
+
+
 
         // #n4. "Stonksid"
         // kirjuta programm mis töötab tsüklis ja omab tehtavat koodi mis:
@@ -99,6 +184,7 @@ internal class Program
         // kui kasutaja portfell pole jõudnud alla nulli, siis kasutaja saab valida kas investeerida uuesti või mitte
         // kui aga portfell on nullis, öeldakse kasutajale et on pankrotis
         // kuvatakse kasutajale tema portfelli lõppväärtus.
+
     }
 }
 
