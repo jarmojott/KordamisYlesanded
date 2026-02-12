@@ -1,0 +1,221 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
+  <diagram id="0HD-nsd7_2KD70WCQ666" name="Leht-1">
+    <mxGraphModel dx="2066" dy="1225" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="IsnDkY5YuohAoSFceVYP-1" value="// #n1. &quot;Tervitus&quot;&#xa;            // kirjuta programm mis,&#xa;            // - küsib tsükliga kasutajalt tema eesnime&#xa;            // - - küsitakse uuesti tühja sisendi korral&#xa;            // - küsib kasutajalt tema keskmist nime&#xa;            // - - küsitakse uuesti tühja sisendi korral&#xa;            // - küsib kasutajalt tema perekonnanime&#xa;            // - - küsitakse uuesti tühja sisendi korral&#xa;            // - tema vanust&#xa;            // - - küsitakse uuesti tühja sisendi korral&#xa;            // - ning väljastab talle tervituslause, kasutades kõiki muutujaid" style="text;whiteSpace=wrap;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" vertex="1" parent="1">
+          <mxGeometry x="170" y="3100" width="400" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="IsnDkY5YuohAoSFceVYP-2" target="IsnDkY5YuohAoSFceVYP-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-2" value="ALGUS" style="ellipse;whiteSpace=wrap;html=1;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;" vertex="1" parent="1">
+          <mxGeometry x="354" y="30" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="IsnDkY5YuohAoSFceVYP-3" target="IsnDkY5YuohAoSFceVYP-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-3" value="Loo sõne muutuja &lt;b&gt;&quot;eesNimi&quot;&lt;br&gt;&lt;/b&gt;mille algväärtus on tühjus." style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="180" width="250" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="IsnDkY5YuohAoSFceVYP-5" target="IsnDkY5YuohAoSFceVYP-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-9" value="JAH" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="IsnDkY5YuohAoSFceVYP-8">
+          <mxGeometry x="-0.0261" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="IsnDkY5YuohAoSFceVYP-5" target="IsnDkY5YuohAoSFceVYP-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="223" y="395" />
+              <mxPoint x="223" y="605" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-17" value="EI" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="IsnDkY5YuohAoSFceVYP-16">
+          <mxGeometry x="-0.6991" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-5" value="Kas muutuja &lt;b&gt;eesNimi&lt;br&gt;&lt;/b&gt;väärtus on tühi?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+          <mxGeometry x="300" y="330" width="230" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="IsnDkY5YuohAoSFceVYP-7" target="IsnDkY5YuohAoSFceVYP-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-7" value="Kuva tekst: &lt;br&gt;&quot;Palun sisesta oma nimi: &quot;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="570" width="150" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="IsnDkY5YuohAoSFceVYP-10" target="IsnDkY5YuohAoSFceVYP-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="620" y="738" />
+              <mxPoint x="620" y="395" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-10" value="Oota kuni kasutaja sisestab käsureale väärtuse, ning omista see muutujale &lt;b&gt;eesNimi&lt;/b&gt;" style="whiteSpace=wrap;html=1;fillColor=#f0a30a;fontColor=#000000;strokeColor=#BD7000;" vertex="1" parent="1">
+          <mxGeometry x="337.5" y="700" width="155" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="IsnDkY5YuohAoSFceVYP-13" target="IsnDkY5YuohAoSFceVYP-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-21" value="EI" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="IsnDkY5YuohAoSFceVYP-20">
+          <mxGeometry x="-0.2219" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="IsnDkY5YuohAoSFceVYP-13" target="IsnDkY5YuohAoSFceVYP-26">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="165" y="1033" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-31" value="JAH" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="IsnDkY5YuohAoSFceVYP-30">
+          <mxGeometry x="0.0592" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-13" value="Kas muutuja&amp;nbsp;&lt;b&gt;keskmineNimi&lt;br&gt;&lt;/b&gt;väärtus ei ole tühi?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+          <mxGeometry x="299" y="967.5" width="230" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="IsnDkY5YuohAoSFceVYP-14" target="IsnDkY5YuohAoSFceVYP-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-14" value="Loo sõne muutuja&amp;nbsp;&lt;b&gt;&quot;keskmineNimi&quot;&lt;br&gt;&lt;/b&gt;mille algväärtus on tühjus." style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="142.5" y="677.5" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="IsnDkY5YuohAoSFceVYP-18" target="IsnDkY5YuohAoSFceVYP-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-18" value="Kuva tekst: &lt;br&gt;&quot;Palun sisesta oma nimi: &quot;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="339" y="1237.5" width="150" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="IsnDkY5YuohAoSFceVYP-19" target="IsnDkY5YuohAoSFceVYP-13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="580" y="1455" />
+              <mxPoint x="580" y="1033" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-19" value="Oota kuni kasutaja sisestab käsureale väärtuse, ning omista see muutujale &lt;b&gt;keskmineNimi&lt;/b&gt;" style="whiteSpace=wrap;html=1;fillColor=#f0a30a;fontColor=#000000;strokeColor=#BD7000;" vertex="1" parent="1">
+          <mxGeometry x="336.5" y="1417.5" width="155" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="IsnDkY5YuohAoSFceVYP-26" target="IsnDkY5YuohAoSFceVYP-28">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="165" y="1580" />
+              <mxPoint x="405" y="1580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-26" value="Loo sõne muutuja &lt;b&gt;&quot;pereNimi&quot;&lt;br&gt;&lt;/b&gt;mille algväärtus on tühjus." style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1360" width="190" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="IsnDkY5YuohAoSFceVYP-27" target="IsnDkY5YuohAoSFceVYP-28">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="328" y="2048" />
+              <mxPoint x="160" y="2048" />
+              <mxPoint x="160" y="1689" />
+              <mxPoint x="290" y="1689" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-27" value="Oota kuni kasutaja sisestab käsureale väärtuse, ning omista see muutujale &lt;b&gt;pereNimi&lt;/b&gt;" style="whiteSpace=wrap;html=1;fillColor=#f0a30a;fontColor=#000000;strokeColor=#BD7000;" vertex="1" parent="1">
+          <mxGeometry x="327.5" y="2016" width="155" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="IsnDkY5YuohAoSFceVYP-28" target="IsnDkY5YuohAoSFceVYP-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-37" value="JAH" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="IsnDkY5YuohAoSFceVYP-35">
+          <mxGeometry x="-0.4419" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="IsnDkY5YuohAoSFceVYP-28" target="IsnDkY5YuohAoSFceVYP-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-41" value="EI" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="IsnDkY5YuohAoSFceVYP-40">
+          <mxGeometry x="-0.6495" y="-1" relative="1" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-28" value="Kas muutuja&amp;nbsp;&lt;b&gt;pereNimi&lt;br&gt;&lt;/b&gt;väärtus on tühi?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+          <mxGeometry x="290" y="1630" width="230" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="IsnDkY5YuohAoSFceVYP-34" target="IsnDkY5YuohAoSFceVYP-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-34" value="Kuva tekst: &lt;br&gt;&quot;Palun sisesta oma perenimi: &quot;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="1846" width="150" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.45;exitY=1.021;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="IsnDkY5YuohAoSFceVYP-39" target="IsnDkY5YuohAoSFceVYP-42">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="620" y="2160" />
+              <mxPoint x="370" y="2160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-39" value="Loo täisarvu muutuja&amp;nbsp;&lt;b&gt;&quot;vanus&quot;&lt;br&gt;&lt;/b&gt;mille algväärtus on 0." style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="1993.5" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="IsnDkY5YuohAoSFceVYP-42" target="IsnDkY5YuohAoSFceVYP-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-47" value="JAH" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="IsnDkY5YuohAoSFceVYP-46">
+          <mxGeometry x="0.05" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="IsnDkY5YuohAoSFceVYP-42" target="IsnDkY5YuohAoSFceVYP-50">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="165" y="2265" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-52" value="EI" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="IsnDkY5YuohAoSFceVYP-51">
+          <mxGeometry x="-0.8275" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-42" value="Kas muutuja&amp;nbsp;&lt;b&gt;vanus&lt;br&gt;&lt;/b&gt;väärtus on väiksem kui 1?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+          <mxGeometry x="255" y="2200" width="230" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="IsnDkY5YuohAoSFceVYP-44" target="IsnDkY5YuohAoSFceVYP-42">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="610" y="2628" />
+              <mxPoint x="610" y="2265" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-44" value="Oota kuni kasutaja sisestab käsureale väärtuse, ning omista see muutujale &lt;b&gt;vanus&lt;/b&gt;" style="whiteSpace=wrap;html=1;fillColor=#f0a30a;fontColor=#000000;strokeColor=#BD7000;" vertex="1" parent="1">
+          <mxGeometry x="292.5" y="2590" width="155" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="IsnDkY5YuohAoSFceVYP-45" target="IsnDkY5YuohAoSFceVYP-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-45" value="Kuva tekst: &lt;br&gt;&quot;Palun sisesta oma vanus: &quot;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="2420" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="IsnDkY5YuohAoSFceVYP-50" target="IsnDkY5YuohAoSFceVYP-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-50" value="Kuva tekst: &lt;br&gt;&quot;Tere päevast &amp;lt;eesNimi&amp;gt; &amp;lt;pereNimi&amp;gt;! &lt;br&gt;Või kutsun sind &amp;lt;keskmineNimi&amp;gt;? &lt;br&gt;Oled tublisti kasvanud, oled &amp;lt;vanus&amp;gt;-aastane.&quot;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="2700" width="230" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="IsnDkY5YuohAoSFceVYP-53" value="LÕPP" style="ellipse;whiteSpace=wrap;html=1;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;" vertex="1" parent="1">
+          <mxGeometry x="310" y="2900" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
