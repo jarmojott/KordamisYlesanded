@@ -87,7 +87,7 @@ internal class Program
         // ⭐iseseisvalt lisa juurde puude tuvastamine ⭐
 
 
-
+        /*
         List<string> valikud = new List<string>() { "seent", "marja", "puud" };
 
         string otsing = String.Empty;
@@ -145,8 +145,6 @@ internal class Program
         }
         else
         {
-            //List<string> puuNimi = new List<string>() { "Kask", "Kuusk", "Vaher" };
-            //List<string> puuKirjeldus = new List<string>() { "Kask on valge tüvega.", "Kuusel on okkad.", "Vaheri leht on Kanada riigilipul." };
             string[,] puud = new string[,]
         {
             { "Kask", "Kask on valget värvi tüvega."},
@@ -170,7 +168,7 @@ internal class Program
         }
 
 
-
+         */
         // #n4. "Stonksid"
         // kirjuta programm mis töötab tsüklis ja omab tehtavat koodi mis:
         // küsib kasutajalt temapoolse investeeritava summa
@@ -185,6 +183,17 @@ internal class Program
         // kui aga portfell on nullis, öeldakse kasutajale et on pankrotis
         // kuvatakse kasutajale tema portfelli lõppväärtus.
 
+
+
+        double summa = 0;
+        string[] firmad = new string[] { "Tesla", "TransferWise", "Macro$lop" };
+        do
+        {
+            Console.Write("Sisesta palun investeeritav summa: ");
+            summa = double.Parse(Console.ReadLine());
+
+        }
+        while (true);
     }
 }
 
