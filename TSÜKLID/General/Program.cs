@@ -174,26 +174,64 @@ internal class Program
         // küsib kasutajalt temapoolse investeeritava summa
         // küsib kolme firma kohta millesse ta investeerida soovib (Tesla, TransferWise või Macro$lop)
         // valitud firma kohta otsustab programm kordaja.
-        // kui selleks on Tesla, siis on kordaja fikseeritud -1.15
+        // kui selleks on Tesla, siis on kordaja fikseeritud -1.15 (115%)
         // kui selleks on TransferWise, siis on kordajaks valemi tuleumus kus juhuarvu abil otsustatakse arv vahemikus 1 ja 100, juhuarv jagatakse 1000ga ja sinna liidetakse 1 juurde
         // kui selleks on Macro$lop, siis kasutatakse sama valemit TransferWise puhul, aga arv ise on alati negatiivne.
         // programm küsib ka kasutajalt kui pikaks ajaks (mitu päeva) investeering turul olla lasta
+
         // tsükkel kirjutab välja iga päeva kohta firmanime, hetkekordaja, kasutajaportfelliväärtuse
         // kui kasutaja portfell pole jõudnud alla nulli, siis kasutaja saab valida kas investeerida uuesti või mitte
         // kui aga portfell on nullis, öeldakse kasutajale et on pankrotis
         // kuvatakse kasutajale tema portfelli lõppväärtus.
 
 
+        Dictionary<string, double> firmad = new Dictionary<string, double>();
+        firmad.Add("Tesla", -1.15);
+        firmad.Add("TransferWise", ((double)new Random().Next(1, 100) / 1000) + 1);
+        firmad.Add("Macro$lop", -Math.Abs(((double)new Random().Next(1, 100) / 1000) + 1));
 
         double summa = 0;
-        string[] firmad = new string[] { "Tesla", "TransferWise", "Macro$lop" };
+        int valik = 0;
+        int pikkus = 0;
         do
         {
             Console.Write("Sisesta palun investeeritav summa: ");
             summa = double.Parse(Console.ReadLine());
 
+            for (int i = 1; i < firmad.Count + 1; i++)
+            {
+                Console.WriteLine(i + "." + firmad.ElementAt(i - 1));
+            }
+            Console.Write("Tee oma valik nende seast: ");
+            valik = int.Parse(Console.ReadLine());
+
+            Console.Write("Kui kauaks (mitu päeva) on turul investeering: ");
+            pikkus = int.Parse(Console.ReadLine());
+
+
+            for (int i = 1; i < pikkus + 1; i++)
+            {
+                double vanaKordistaja = firmad.ElementAt(valik - 1).Value; 
+                switch (firmad.ElementAt(valik - 1).Key)
+                {
+                    case "Tesla":
+                        summa = summa * -1.15;
+                        break;
+                    case "TransferWise":
+                        summa = summa * -1.15;
+                        break;
+                    default:
+                        break;
+                }
+                Console.WriteLine(i + ". päev: " + firmad.ElementAt(valik - 1).Key + ", "+ vanaKordistaja + ", " + summa);
+            }
+            if (summa <= 0)
+            {
+                Console.WriteLine("PANKROT!");
+                break;
+            }
         }
-        while (true);
+        while (valik <= 0 || valik > firmad.Count || pikkus <= 0);
     }
 }
 
