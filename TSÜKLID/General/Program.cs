@@ -185,10 +185,13 @@ internal class Program
         // kuvatakse kasutajale tema portfelli lõppväärtus.
 
 
-        string[] firmad = new string[3] { "Tesla", "TransferWise", "Macro$lop" };
+
         //firmad.Add("Tesla", -1.15);
         //firmad.Add("TransferWise", ((double)new Random().Next(1, 100) / 1000) + 1);
         //firmad.Add("Macro$lop", -Math.Abs(((double)new Random().Next(1, 100) / 1000) + 1));
+
+
+        //Õppetöö 20.02.2026 all kood olemas.
 
         double summa = 0;
         int valik = 0;
@@ -201,16 +204,17 @@ internal class Program
                 summa = double.Parse(Console.ReadLine());
             } while (summa <= 0);
 
+            List<String> firmad = new List<String> { "Tesla", "TransferWise", "Macro$lop" };
             do
             {
 
-                for (int i = 1; i < firmad.Length + 1; i++)
+                for (int i = 1; i < firmad.ToArray().Length + 1; i++)
                 {
                     Console.WriteLine(i + ". " + firmad.ElementAt(i - 1));
                 }
                 Console.Write("Tee oma valik numbriga: ");
                 valik = int.Parse(Console.ReadLine());
-            } while (valik <= 0 || valik > firmad.Length);
+            } while (valik <= 0 || valik > firmad.ToArray().Length);
 
             do
             {
@@ -221,23 +225,36 @@ internal class Program
             } while (pikkus <= 0);
 
 
+            double cycleRate = 0f;
             for (int i = 1; i < pikkus + 1; i++)
             {
                 double kordistaja = 0;
+
+                double fixture = new Random().Next(1, 100);
+                double result = (fixture / 1000) + 1;
+                double wiseRate = result;
+                double msRate = result - result * 2;
+                double teslaRate = -1.15;
+
+                Math.Abs(summa);
                 switch (firmad.ElementAt(valik - 1))
                 {
                     case "Tesla":
                         kordistaja = -1.15;
+                        cycleRate = teslaRate;
                         //summa -= summa *kordistaja;
                         //summa *= (1 - 1.15);
                         //summa = summa * Math.Pow(kordistaja, 2);
                         summa *= -0.15;
                         break;
                     case "TransferWise":
+                        cycleRate = wiseRate;
                         //summa = summa * -1.15;
                         break;
                     case "Macro$lop":
+                        cycleRate = msRate;
                         //summa = summa * -1.15;
+
                         break;
                     default:
                         break;
