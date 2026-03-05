@@ -33,81 +33,14 @@
         //¤ Kasutades eelnevalt tunnis tehtud näiteülesannet kus kuvame välja temperatuuri pulgana, ✅
         //¤ tee meetod, mis võtab sisse temperatuuri ning nädalapäeva nime ja tekitab vastava andmepulga, kuhu *SAMA REA LÕPPU* kirjutatakse temperatuur arvväärtusena ja nädalapäeva nimi   ✅
         //¤ Tsükkel kasutab esimest nädalapäeva ja kuvab meetodi abil kõikide sisestatud päevade info.  ✅
-        //¤ peale kuvamist küsib kasutajalt kas ta soovib jätkata, ning kui soovib, siis algab programm uuesti andmete sisestusest, mitte sisselogimisest, 
-        //¤ kui ei, kuvatakse uuesti sisselogimine
+        //¤ peale kuvamist küsib kasutajalt kas ta soovib jätkata, ning kui soovib, siis algab programm uuesti andmete sisestusest, mitte sisselogimisest ✅ 
+        //¤ kui ei, kuvatakse uuesti sisselogimine  ✅
         //
         // 40% = 3
         // 65% = 4
         // 80% = 5
 
-
-
-        
-
-
-
-        string[][] nädalapäevaNimed = new string[][] { ["E", "Esmaspäev"], ["T", "Teisipäev"], ["K", "Kolmapäev"], ["N", "Neljapäev"], ["R", "Reede"], ["L", "Laupäev"], ["P", "Pühapäev"] };
-
-        List<double> temperatuurid = new List<double>();
-        int päevadeKogus = sisestaTäisArv("Mitme päeva temperatuure sa sisestada tahad: ");
-        int nädalapäevaAlgus = sisestaNädalapäevaTunnus("Mis nädalapäevast temperatuure sisestada soovid: ");
-
-        int nädalapäevaNr = nädalapäevaAlgus;
-        for (int i = 0; i < päevadeKogus; i++)
-        {
-            temperatuurid.Add(sisestaTemp("Sisesta " + nädalapäevaNimed[nädalapäevaNr][1] + " temperatuur: "));
-            if (nädalapäevaNr == 6)
-                nädalapäevaNr = 0;
-            else
-                nädalapäevaNr++;
-
-        }
-
-        int keskPunkt = 25; // -50 kuni +50
-        Console.WriteLine("Sinu sisestatud temperatuurid:");
-        nädalapäevaNr = nädalapäevaAlgus;
-        foreach (var temperatuur in temperatuurid)
-        {
-            string displayableData = String.Empty;
-
-            int i = 0;
-            while (i < keskPunkt * 2)
-            {
-                double sm0 = (keskPunkt + temperatuur);
-
-                if (0 >= i && i < sm0)
-                //kui i on vahemikus 0 ja sm0, 
-                { displayableData += "░"; } //siis joonistame tumeda tähemärgi
-                else if (sm0 >= i && i < keskPunkt)
-                //kui i on vahemikus sm0 ja 45, 
-                { displayableData += "░"; } //siis joonistame tumeda tähemärgi
-                else if (sm0 >= i && i < keskPunkt * 2)
-                //kui i on vahemikus sm0 ja 90, 
-                { displayableData += "▓"; } //siis joonistame heleda tähemärgi
-                else if (keskPunkt >= i && i < sm0)
-                //kui i on vahemikus 45 ja sm0, 
-                { displayableData += "▓"; } //siis joonistame heleda tähemärgi
-                else if (i >= sm0 && i < keskPunkt)
-                //kui i on vahemikus sm0 ja 45, 
-                { displayableData += "▓"; }//siis joonistame heleda tähemärgi
-                else if (i == keskPunkt)
-                {
-                    displayableData += "║"; //siis joonistame pulga tähemärgi
-                }
-                else
-                { displayableData += "░"; }
-                i++;
-            }
-            Console.WriteLine(displayableData+" "+ nädalapäevaNimed[nädalapäevaNr][1] + ": " + temperatuur);
-
-            if (nädalapäevaNr == 6)
-                nädalapäevaNr = 0;
-            else
-                nädalapäevaNr++;
-        }
-
         List<string[]> andmebaas = new List<string[]>();
-
         Console.WriteLine("### ALGUS ###");
         string tegevus = String.Empty;
         do
@@ -116,42 +49,105 @@
             tegevus = Console.ReadLine().ToLower();
             switch (tegevus)
             {
-                case "l":
+                case "login":
                     Console.WriteLine("### AUTENTIMINE ###");
                     string kasutajaNimi = sisestaIlmaTühikuta("Palun sisesta oma kasutajanimi: ");
                     string parool = sisestaIlmaTühikuta("Palun sisesta oma parool: ");
+                    bool sisseLogitud = false;
                     foreach (var konto in andmebaas)
                     {
                         if (konto[0] == kasutajaNimi && konto[2] == parool)
                         {
+                            sisseLogitud = true;
                             string[] täisNimi = konto[1].Split(' ');
-                            Console.WriteLine("Tere tulemast " + täisNimi[0] + "!");
-
+                            Console.WriteLine("(!) Tere tulemast " + täisNimi[0] + "!");
                             do
                             {
+                                string[][] nädalapäevaNimed = new string[][] { ["E", "Esmaspäev"], ["T", "Teisipäev"], ["K", "Kolmapäev"], ["N", "Neljapäev"], ["R", "Reede"], ["L", "Laupäev"], ["P", "Pühapäev"] };
 
+                                List<double> temperatuurid = new List<double>();
+                                int päevadeKogus = sisestaTäisArv("Mitme päeva temperatuure sa sisestada tahad: ");
+                                int nädalapäevaAlgus = sisestaNädalapäevaTunnus("Mis nädalapäevast temperatuure sisestada soovid: ");
+
+                                int nädalapäevaNr = nädalapäevaAlgus;
+                                for (int i = 0; i < päevadeKogus; i++)
+                                {
+                                    temperatuurid.Add(sisestaTemp("Sisesta " + nädalapäevaNimed[nädalapäevaNr][1] + " temperatuur: "));
+                                    if (nädalapäevaNr == 6)
+                                        nädalapäevaNr = 0;
+                                    else
+                                        nädalapäevaNr++;
+
+                                }
+
+                                int keskPunkt = 25; // -50 kuni +50
+                                Console.WriteLine("Sinu sisestatud temperatuurid:");
+                                nädalapäevaNr = nädalapäevaAlgus;
+                                foreach (var temperatuur in temperatuurid)
+                                {
+                                    string displayableData = String.Empty;
+
+                                    int i = 0;
+                                    while (i < keskPunkt * 2)
+                                    {
+                                        double sm0 = (keskPunkt + temperatuur);
+
+                                        if (0 >= i && i < sm0)
+                                        //kui i on vahemikus 0 ja sm0, 
+                                        { displayableData += "░"; } //siis joonistame tumeda tähemärgi
+                                        else if (sm0 >= i && i < keskPunkt)
+                                        //kui i on vahemikus sm0 ja 45, 
+                                        { displayableData += "░"; } //siis joonistame tumeda tähemärgi
+                                        else if (sm0 >= i && i < keskPunkt * 2)
+                                        //kui i on vahemikus sm0 ja 90, 
+                                        { displayableData += "▓"; } //siis joonistame heleda tähemärgi
+                                        else if (keskPunkt >= i && i < sm0)
+                                        //kui i on vahemikus 45 ja sm0, 
+                                        { displayableData += "▓"; } //siis joonistame heleda tähemärgi
+                                        else if (i >= sm0 && i < keskPunkt)
+                                        //kui i on vahemikus sm0 ja 45, 
+                                        { displayableData += "▓"; }//siis joonistame heleda tähemärgi
+                                        else if (i == keskPunkt)
+                                        {
+                                            displayableData += "║"; //siis joonistame pulga tähemärgi
+                                        }
+                                        else
+                                        { displayableData += "░"; }
+                                        i++;
+                                    }
+                                    Console.WriteLine(displayableData + " " + nädalapäevaNimed[nädalapäevaNr][1] + ": " + temperatuur+" kraadi.");
+
+                                    if (nädalapäevaNr == 6)
+                                        nädalapäevaNr = 0;
+                                    else
+                                        nädalapäevaNr++;
+                                }
                             }
-                            while (sisestaIlmaTühikuta("Soovid jätkata [jah/ei]: ") != "ei");
+                            while (sisestaIlmaTühikuta("Soovid jätkata [jah/ei]: ").ToLower() == "jah");
                             break;
                         }
                     }
-                    Console.WriteLine("Sellist kontot minu andmebaasis pole.");
+                    if (sisseLogitud)
+                        Console.WriteLine("(!) Oled nüüd välja logitud.");
+                    else
+                        Console.WriteLine("(!) Sellist kontot minu andmebaasis pole.");
                     break;
-                case "r":
+                case "register":
                     Console.WriteLine("### REGISTREERIMINE ###");
                     string[] uusKonto = new string[3];
                     uusKonto[1] = sisestaTäisnimi();
                     uusKonto[0] = sisestaIlmaTühikuta("Sisesta soovitud kasutajanimi: ");
                     uusKonto[2] = sisestaIlmaTühikuta("Sisesta soovitud parool: ");
                     andmebaas.Add(uusKonto);
+                    Console.WriteLine("(!) Sinu konto on registreeritud.");
                     break;
-                case "s":
+                case "stop":
                     Console.WriteLine("### LÕPP ###");
                     break;
                 default:
                     break;
             }
-        } while (tegevus != "s");
+        } while (tegevus != "stop");
 
     }
     public static string sisestaTäisnimi()
