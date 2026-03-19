@@ -14,6 +14,14 @@
             World map = new World("Hello World", new LocationType(3, 9), new LocationType(6, 8));
             Player player = new Player(100, 3, 0, new List<BackPackItemType>(), map.Start);
 
+            List<Enemy> enemyList = new List<Enemy>() {
+            new Enemy("Konn", 10, "Olen hirmus konn!", 1),
+            new Enemy("Karu", 10, "Olen kuri karu!", 5)
+            };
+
+            Boss boss = new Boss("Vikat", 25, 50, "Vikatimees", "Värise vikatimehe ees!", 15);
+            boss.Lives = 10;
+
             do
             {
                 Console.Clear();
@@ -24,7 +32,7 @@
                 bool isWin = EventSystem.CheckWin(player.Location, map.Goal);
                 if (isWin)
                     break;
-                EventSystem.NextEncounter(player, map);
+                EventSystem.NextEncounter(player, map, enemyList, boss);
                 EventSystem.NextLocation(player, map);
 
 

@@ -2,30 +2,35 @@
 {
     public class EventSystem
     {
+        public enum Events { KRATT, WITCH, MUSHROOM, KNIFE, HILL, SHOP, ENEMY_DUEL }
 
-        public static void NextEncounter(Player player, World map)
+        public static void NextEncounter(Player player, World map, List<Enemy> enemies, Boss boss)
         {
             // LocationType location = player.Location;
-            int result = map.Map[player.Location.X, player.Location.Y];
+            Events result = (Events)map.Map[player.Location.X, player.Location.Y];
+
             switch (result)
             {
-                case 1:
-                    Event1_Kratt(player);
+                case Events.KRATT:
+                    Event_Kratt(player);
                     break;
-                case 2:
-                    Event1_Witch(player);
+                case Events.WITCH:
+                    Event_Witch(player);
                     break;
-                case 3:
-                    Event1_Mushroom(player);
+                case Events.MUSHROOM:
+                    Event_Mushroom(player);
                     break;
-                case 4:
-                    Event1_Knife(player);
+                case Events.KNIFE:
+                    Event_Knife(player);
                     break;
-                case 5:
-                    Event1_Hill(player);
+                case Events.HILL:
+                    Event_Hill(player);
                     break;
-                case 6:
-                    Event1_Shop(player);
+                case Events.SHOP:
+                    Event_Shop(player);
+                    break;
+                case Events.ENEMY_DUEL:
+                    Event_EnemyDuel(player, enemies, boss);
                     break;
                 default:
                     break;
@@ -33,35 +38,52 @@
 
         }
 
-        public static void NextEncounter(Player player, Random rng)
+        private static void Event_EnemyDuel(Player player, List<Enemy> enemies, Boss boss)
         {
-            int nextEncounterInt = rng.Next(1, 7);
-            switch (nextEncounterInt)
-            {
-                case 1:
-                    Event1_Kratt(player);
-                    break;
-                case 2:
-                    Event1_Witch(player);
-                    break;
-                case 3:
-                    Event1_Mushroom(player);
-                    break;
-                case 4:
-                    Event1_Knife(player);
-                    break;
-                case 5:
-                    Event1_Hill(player);
-                    break;
-                case 6:
-                    Event1_Shop(player);
-                    break;
-                default:
-                    break;
-            }
+            Random random = new Random();
+            int newChoice = random.Next(0, enemies.Count);
+            if (newChoice == enemies.Count)
+                AutoDuel(player, boss);
+            else
+                AutoDuel(player, enemies.ElementAt(newChoice)); 
         }
 
-        private static void Event1_Shop(Player player)
+        private static void AutoDuel(Player player, Enemy? enemy = null, Boss? boss=null)
+        {
+            if (boss == null)
+                boss = (Boss)enemy;
+
+        }
+
+        //public static void NextEncounter(Player player, Random rng)
+        //{
+        //    int nextEncounterInt = rng.Next(1, 7);
+        //    switch (nextEncounterInt)
+        //    {
+        //        case 1:
+        //            Event_Kratt(player);
+        //            break;
+        //        case 2:
+        //            Event_Witch(player);
+        //            break;
+        //        case 3:
+        //            Event_Mushroom(player);
+        //            break;
+        //        case 4:
+        //            Event_Knife(player);
+        //            break;
+        //        case 5:
+        //            Event_Hill(player);
+        //            break;
+        //        case 6:
+        //            Event_Shop(player);
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //}
+
+        private static void Event_Shop(Player player)
         {
             List<BackPackItemType> shelf = new List<BackPackItemType>()
                 {
@@ -110,7 +132,7 @@
             Console.WriteLine("Lahkusid poest");
         }
 
-        private static void Event1_Hill(Player player)
+        private static void Event_Hill(Player player)
         {
             Console.WriteLine("Kõnnid mööda teed, ja vastu tuleb huvtava kujuga põlvekõrgune mätas");
             Console.WriteLine("Mätas on keset teed ees, ei saa ei üle ega ümber sest oled laisk, mida teed?");
@@ -134,7 +156,7 @@
             }
         }
 
-        private static void Event1_Knife(Player player)
+        private static void Event_Knife(Player player)
         {
             Console.WriteLine("Leiad maast noa, ta on verine, kas sa võtad selle üles?:");
             string response = Console.ReadLine();
@@ -149,7 +171,7 @@
             }
         }
 
-        private static void Event1_Mushroom(Player player)
+        private static void Event_Mushroom(Player player)
         {
             Random newrng = new Random();
             int mushroomEffect = newrng.Next(-4, 4);
@@ -174,7 +196,7 @@
             }
         }
 
-        private static void Event1_Witch(Player player)
+        private static void Event_Witch(Player player)
         {
             Console.WriteLine("NYEH! Oled eksinud minu koju! Mis sul - sissetungijal - öelda on!!!");
             string response = Console.ReadLine();
@@ -194,7 +216,7 @@
             }
         }
 
-        private static void Event1_Kratt(Player player)
+        private static void Event_Kratt(Player player)
         {
             Random newrng = new Random();
             int generation = newrng.Next(1, 10);

@@ -1,4 +1,6 @@
-﻿namespace Adventure
+﻿using static Adventure.EventSystem;
+
+namespace Adventure
 {
     public class World
     {
@@ -16,7 +18,7 @@
         /// <param name="goal">Where the player finishes the game</param>
         public World(string worldName, LocationType start, LocationType goal)
         {
-            Map = NewMap(10, 6);
+            Map = NewMap(10, Events.GetNames(typeof(Events)).Length);
             WorldName = worldName;
             Start = start;
             Goal = goal;
