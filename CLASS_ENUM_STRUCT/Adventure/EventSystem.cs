@@ -1,10 +1,37 @@
-﻿using System.Numerics;
-
-namespace Adventure
+﻿namespace Adventure
 {
     public class EventSystem
     {
 
+        public static void NextEncounter(Player player, World map)
+        {
+            // LocationType location = player.Location;
+            int result = map.Map[player.Location.X, player.Location.Y];
+            switch (result)
+            {
+                case 1:
+                    Event1_Kratt(player);
+                    break;
+                case 2:
+                    Event1_Witch(player);
+                    break;
+                case 3:
+                    Event1_Mushroom(player);
+                    break;
+                case 4:
+                    Event1_Knife(player);
+                    break;
+                case 5:
+                    Event1_Hill(player);
+                    break;
+                case 6:
+                    Event1_Shop(player);
+                    break;
+                default:
+                    break;
+            }
+
+        }
 
         public static void NextEncounter(Player player, Random rng)
         {
@@ -216,6 +243,75 @@ namespace Adventure
                     player.Backpack.Remove(BackPackItemType.Nuga);
                 }
             }
+        }
+
+        public static void NextLocation(Player player, World map)
+        {
+            int mapXmax = map.Map.GetLength(0) - 1;
+            int mapYmax = map.Map.GetLength(1) - 1;
+            Console.WriteLine("Vali suund tähega:");
+            Console.WriteLine("   N   ");
+            Console.WriteLine("W  +  E");
+            Console.WriteLine("   S   ");
+            string response = Console.ReadLine().ToUpper();
+
+            int nextLocation;
+            switch (response)
+            {
+                case "N":
+                    nextLocation = checkCandidate(mapYmax, player.Location.Y - 1, true);
+                    player.Location = new LocationType(player.Location.X, nextLocation);
+                    break;
+                case "S":
+                    nextLocation = checkCandidate(mapYmax, player.Location.Y + 1);
+                    player.Location = new LocationType(player.Location.X, nextLocation);
+                    break;
+                case "W":
+                    nextLocation = checkCandidate(mapXmax, player.Location.X - 1, true);
+                    player.Location = new LocationType(nextLocation, player.Location.Y);
+                    break;
+                case "E":
+                    nextLocation = checkCandidate(mapXmax, player.Location.X + 1);
+                    player.Location = new LocationType(nextLocation, player.Location.Y);
+                    break;
+            }
+
+        }
+
+        /// <summary>
+        /// Checks if player next location exceeds maximum value.
+        /// </summary>
+        /// <param name="maxValue">Value to compare against</param>
+        /// <param name="playerNextLocation">Players future location</param>
+        /// <returns>Returns 0 if exceeded or player future location </returns>
+        private static int checkCandidate(int maxValue, int playerNextLocation, bool checkMinimum = false)
+        {
+            if (!checkMinimum)
+            {
+                if (playerNextLocation > maxValue)
+                    return 0;
+                else
+                    return playerNextLocation;
+            }
+            else
+            {
+                if (playerNextLocation > maxValue)
+                    return maxValue;
+                else
+                    return playerNextLocation;
+            }
+
+        }
+
+        internal static bool CheckWin(LocationType location, LocationType goal)
+        {
+            if (location.ToString() == goal.ToString())
+            {
+                return true;
+            }
+            else
+                return false;
+
         }
     }
 }

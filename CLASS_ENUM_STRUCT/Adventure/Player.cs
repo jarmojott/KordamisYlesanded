@@ -16,6 +16,11 @@ namespace Adventure
             X = x;
             Y = y;
         }
+
+        public override string ToString()
+        {
+            return X + " " + Y;
+        }
     }
 
     public class Player

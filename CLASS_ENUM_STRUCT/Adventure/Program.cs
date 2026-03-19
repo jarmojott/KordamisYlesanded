@@ -2,13 +2,6 @@
 {
     internal class Program
     {
-        /*
-         * 1: Tee Player klass, koos viie andmeväljaga.
-         * Player klassis on üks konstruktur kus kasutakse kõiki andmeid.
-         * Andmeväljad on: Lives, Health, struct Location (X ja Y), Backpack, Money
-         * Vaikeväärtused on Lives=3 ja Health (100)
-         */
-
         static void Main(string[] args)
         {
             Player newPlayer = new Player(50, 5, 10, new List<BackPackItemType>() { BackPackItemType.Vibu }, new LocationType(99, 88));
@@ -16,8 +9,10 @@
 
 
             Random rng = new Random();
-            Player player = new Player(100, 3, 0, new List<BackPackItemType>(), new LocationType(0, 0));
             string playAgain = "yes";
+
+            World map = new World("Hello World", new LocationType(3, 9), new LocationType(6, 8));
+            Player player = new Player(100, 3, 0, new List<BackPackItemType>(), map.Start);
 
             do
             {
@@ -25,7 +20,13 @@
                 Console.WriteLine("STATS:");
                 player.DisplayStats();
                 Console.WriteLine();
-                EventSystem.NextEncounter(player, rng);
+
+                bool isWin = EventSystem.CheckWin(player.Location, map.Goal);
+                if (isWin)
+                    break;
+                EventSystem.NextEncounter(player, map);
+                EventSystem.NextLocation(player, map);
+
 
                 player.checkHealth();
 
@@ -42,6 +43,8 @@
                 }
 
             } while (player.Lives > 0 || playAgain == "yes");
+            if (player.Lives > 0)
+                Console.WriteLine("SA VÕITSID!");
 
             //        int moni = 10;
             //        int elud = 3;
